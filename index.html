@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Price Comparison - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Price Compare</h1>
+      <p>Compare prices from top online stores</p>
+      <input type="text" id="searchInput" placeholder="Search for a product...">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="phones">Phones</option>
+        <option value="tv">TVs</option>
+        <option value="laptops">Laptops</option>
+        <option value="accessories">Accessories</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div class="products-grid">
+
+      <!-- iPhone 14 -->
+      <div class="product-card" data-category="phones">
+        <img src="https://images.macrumors.com/t/g1Cq61qstj3tGjzTolX3vgxA_-c=/2500x/article-new/2023/09/iphone-15-blue-23.jpg" alt="iPhone 14">
+        <h3>iPhone 14</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$999</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$979</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>BestBuy:</strong> <span class="price">$989</span> <a href="https://www.bestbuy.com/">Buy</a></div>
+        </div>
+      </div>
+
+      <!-- Samsung TV -->
+      <div class="product-card" data-category="tv">
+        <img src="https://images.samsung.com/is/image/samsung/uk-uhdtv-tu8500-ue55tu8500uxxu-black-Black-221817257?$L2-Thumbnail$" alt="Samsung 4K TV">
+        <h3>Samsung 55" 4K TV</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$649</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$629</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>Reliance Digital:</strong> <span class="price">$639</span> <a href="https://www.reliancedigital.in/">Buy</a></div>
+        </div>
+      </div>
+
+      <!-- MacBook Air -->
+      <div class="product-card" data-category="laptops">
+        <img src="https://bgr.com/wp-content/uploads/2021/12/16-macbook-pro-8.jpg?quality=82&strip=all" alt="MacBook Air M2">
+        <h3>MacBook Air M2</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$1199</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$1149</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>Croma:</strong> <span class="price">$1169</span> <a href="https://www.croma.com/store?location=default">Buy</a></div>
+        </div>
+      </div>
+
+      <!-- Television -->
+      <div class="product-card" data-category="accessories">
+        <img src="https://www.costco.co.uk/medias/sys_master/images/h27/h74/46828486688798.jpg" alt="AirPods Pro">
+        <h3>Television</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$249</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$229</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>Apple Store:</strong> <span class="price">$239</span> <a href="https://www.apple.com/">Buy</a></div>
+        </div>
+      </div>
+
+      <!-- Smart Watch -->
+      <div class="product-card" data-category="accessories">
+        <img src="https://c.wallhere.com/photos/85/72/Luxury_watches_watch-1272833.jpg!d" alt="AirPods Pro">
+        <h3>Smart Watch</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$49</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$29</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong> Fire boltt:</strong> <span class="price">$39</span> <a href="https://www.fireboltt.com/">Buy</a></div>
+        </div>
+      </div>
+
+
+      <!-- Cloths -->
+      <div class="product-card" data-category="accessories">
+        <img src="https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?cs=srgb&dl=pexels-bohlemedia-1884581.jpg&fm=jpg" alt="AirPods Pro">
+        <h3>Cloths</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$24</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$20</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>Meesho:</strong> <span class="price">$159</span> <a href="https://www.meesho.com/">Buy</a></div>
+        </div>
+      </div>
+
+
+      <!-- redmi -->
+      <div class="product-card" data-category="accessories">
+        <img src="https://unbox.ph/wp-content/uploads/2023/08/Redmi-12-5G-Header.jpeg" alt="AirPods Pro">
+        <h3>Redmi</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$100</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$105</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>redmi website:</strong> <span class="price">$110</span> <a href="https://www.mi.com/in/">Buy</a></div>
+        </div>
+      </div>
+
+
+      <!-- Mivi DuoPods F70 -->
+      <div class="product-card" data-category="accessories">
+        <img src="https://cdn1.smartprix.com/rx-ioJbIhOOq-w1200-h1200/oJbIhOOq.jpg" alt="AirPods Pro">
+        <h3>Mivi DuoPods F70</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$10</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$12</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>Apple Store:</strong> <span class="price">$15</span> <a href="https://www.apple.com/">Buy</a></div>
+        </div>
+      </div>
+
+
+      <!-- AC -->
+      <div class="product-card" data-category="accessories">
+        <img src="http://images.samsung.com/is/image/samsung/in_AR12FC2UAEBNNA_509_Front_white?$TM-Gallery$" alt="AirPods Pro">
+        <h3>Air conditioner</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$30</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$35</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>blinkit:</strong> <span class="price">$40</span> <a href="https://blinkit.com/">Buy</a></div>
+        </div>
+      </div>
+
+
+      <!-- Titan Smart Pro -->
+      <div class="product-card" data-category="accessories">
+        <img src="https://navbharattimes.indiatimes.com/thumb/msid-91895576,imgsize-39460,width-700,height-525,resizemode-75/virat-kohli-smart-watch-91895576.jpg" alt="AirPods Pro">
+        <h3>Fire Bolt</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$20</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$22</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>Titan store:</strong> <span class="price">$23</span> <a href="https://www.titan.co.in/">Buy</a></div>
+        </div>
+      </div>
+
+
+      <!--HP Spectre x360  -->
+      <div class="product-card" data-category="accessories">
+        <img src="http://store.hp.com/UKStore/Html/Merch/Images/c05783885_1750x1285.jpg" alt="AirPods Pro">
+        <h3>HP Spectre x360</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$490</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$600</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>HP store:</strong> <span class="price">$650</span> <a href="https://www.hp.com/">Buy</a></div>
+        </div>
+      </div>
+
+
+      <!--Samsung Galaxy S24 Ultra -->
+      <div class="product-card" data-category="accessories">
+        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6570/6570396_sd.jpg" alt="AirPods Pro">
+        <h3>Samsung Galaxy S24 Ultra</h3>
+        <div class="store-prices">
+          <div class="store"><strong>Amazon:</strong> <span class="price">$800</span> <a href="https://www.amazon.in/">Buy</a></div>
+          <div class="store"><strong>Flipkart:</strong> <span class="price">$980</span> <a href="https://www.flipkart.com/">Buy</a></div>
+          <div class="store"><strong>Samsung store:</strong> <span class="price">$650</span> <a href="https://www.samsung.com/in/offer/">Buy</a></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+   <div class="footer-content"></div>
+    <p>
+      <!-- <a href="products.html" style="color: #2563eb; text-decoration: none; margin: 0 10px;">Home</a> -->
+      
+      <a href="about.html" style="color: #2563eb; text-decoration: none; margin: 0 10px;">About</a>
+      |
+      <a href="contact.html" style="color: #2563eb; text-decoration: none; margin: 0 10px;">Contact</a>
+    </p>
+
+    <div style="text-align: center; margin: 20px 0;">
+      <a href="home.html" class="home-button">🏠 Back to Home</a>
+    </div>
+    
+   
+
+    <div class="container">
+      <p>&copy; 2025 PriceCompare. All rights reserved.</p>
+    </div>
+  </footer>
+
+  
+  <script src="script.js"></script>
+  
+  
+
+</body>
+</html>
