@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | PriceCompare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .auth-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2563eb;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle-link a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message {
+      text-align: center;
+      color: red;
+      margin-top: -15px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <!-- Login Form -->
+    <form id="loginForm">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <p class="message" id="loginMessage"></p>
+      <button type="submit">Login</button>
+      <div class="toggle-link">Don't have an account? <a onclick="showSignup()">Sign up</a></div>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm" class="hidden">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupName" placeholder="Full Name" required />
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <p class="message" id="signupMessage"></p>
+      <button type="submit">Create Account</button>
+      <div class="toggle-link">Already have an account? <a onclick="showLogin()">Login</a></div>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const loginMessage = document.getElementById('loginMessage');
+    const signupMessage = document.getElementById('signupMessage');
+
+    function showSignup() {
+      loginForm.classList.add('hidden');
+      signupForm.classList.remove('hidden');
+      loginMessage.textContent = "";
+    }
+
+    function showLogin() {
+      signupForm.classList.add('hidden');
+      loginForm.classList.remove('hidden');
+      signupMessage.textContent = "";
+    }
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+
+      const newUser = { name, email, password };
+
+      // Get existing users
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Check if email already exists
+      const emailExists = users.some(user => user.email === email);
+
+      if (emailExists) {
+        signupMessage.style.color = "red";
+        signupMessage.textContent = "Email already registered!";
+      } else {
+        users.push(newUser);
+        localStorage.setItem('users', JSON.stringify(users));
+        signupMessage.style.color = "green";
+        signupMessage.textContent = "Signup successful! You can now login.";
+        signupForm.reset();
+      }
+    });
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const enteredEmail = document.getElementById('loginEmail').value;
+      const enteredPassword = document.getElementById('loginPassword').value;
+
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+
+      const matchedUser = users.find(user => user.email === enteredEmail && user.password === enteredPassword);
+
+      if (matchedUser) {
+        loginMessage.style.color = "green";
+        loginMessage.textContent = "Login successful!";
+        setTimeout(() => {
+          window.location.href = "index.html"; // redirect to your main app
+        }, 1000);
+      } else {
+        loginMessage.style.color = "red";
+        loginMessage.textContent = "Invalid email or password.";
+      }
+    });
+  </script>
+
+</body>
+</html>
